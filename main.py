@@ -4,6 +4,7 @@ from core.database import Base, engine
 
 from modules.sample.controller import router as sample_router
 from modules.position.controller import router as position_router
+from modules.user.controller import router as user_router
 
 app = FastAPI()
 
@@ -16,6 +17,7 @@ app.add_middleware(
 )
 app.include_router(sample_router)
 app.include_router(position_router)
+app.include_router(user_router)
 
 
 @app.on_event("startup")
